@@ -4,17 +4,17 @@
 
 ### Overview
 
-The **Prime Number Theorem (PNT)** is one of the most profound results in analytic number theory, established independently by Jacques Hadamard and Charles Jean de la VallÃ©e Poussin in 1896. This theorem describes the asymptotic distribution of prime numbers among the positive integers, formalizing the intuitive observation that primes become increasingly sparse as numbers grow larger.
+The **Prime Number Theorem (PNT)** is one of the most profound results in analytic number theory, established independently by Jacques Hadamard and Charles Jean de la Vallée Poussin in 1896. This theorem describes the asymptotic distribution of prime numbers among the positive integers, formalizing the intuitive observation that primes become increasingly sparse as numbers grow larger.
 
 ### Theorem Statement
 
-Let Ï€(x) denote the **prime counting function**, which counts the number of primes less than or equal to x. The Prime Number Theorem states that:
+Let π(x) denote the **prime counting function**, which counts the number of primes less than or equal to x. The Prime Number Theorem states that:
 
-**Ï€(x) ~ x/ln(x) as x â†’ âˆž**
+**π(x) ~ x/ln(x) as x → ∞**
 
 More precisely:
 ```
-lim[xâ†’âˆž] Ï€(x)/(x/ln(x)) = 1
+lim[x→∞] π(x)/(x/ln(x)) = 1
 ```
 
 This asymptotic equivalence means that for large x, the probability that a randomly chosen integer near x is prime is approximately 1/ln(x).
@@ -22,8 +22,8 @@ This asymptotic equivalence means that for large x, the probability that a rando
 ### Historical Context
 
 - **1792-1793**: Carl Friedrich Gauss conjectured the asymptotic formula based on empirical observations
-- **1896**: Independent proofs by Hadamard and de la VallÃ©e Poussin using complex analysis
-- **1949**: Elementary proofs (not using complex analysis) by Atle Selberg and Paul ErdÅ‘s
+- **1896**: Independent proofs by Hadamard and de la Vallée Poussin using complex analysis
+- **1949**: Elementary proofs (not using complex analysis) by Atle Selberg and Paul Erdős
 - **1980**: Simplified proof by Donald J. Newman using basic complex analysis
 
 ### Improved Approximations
@@ -33,26 +33,26 @@ While x/ln(x) gives the correct asymptotic behavior, more accurate approximation
 #### Logarithmic Integral
 The **logarithmic integral** li(x) provides a superior approximation:
 ```
-li(x) = âˆ«[2 to x] dt/ln(t)
+li(x) = ∫[2 to x] dt/ln(t)
 ```
 
-In practice, li(x) consistently overestimates Ï€(x) but with much smaller relative error than x/ln(x).
+In practice, li(x) consistently overestimates π(x) but with much smaller relative error than x/ln(x).
 
 #### Riemann's R(x)
 An even more sophisticated approximation is Riemann's R(x):
 ```
-R(x) = Î£[k=1 to âˆž] Î¼(k)/k Ã— li(x^(1/k))
+R(x) = Σ[k=1 to ∞] μ(k)/k × li(x^(1/k))
 ```
-where Î¼(k) is the MÃ¶bius function.
+where μ(k) is the Möbius function.
 
 ### Connection to the Riemann Hypothesis
 
 The Prime Number Theorem is intimately connected to the **Riemann zeta function**:
 ```
-Î¶(s) = Î£[n=1 to âˆž] 1/n^s = Î [p prime] 1/(1-p^(-s))
+ζ(s) = Σ[n=1 to ∞] 1/n^s = Π[p prime] 1/(1-p^(-s))
 ```
 
-The proof relies on showing that Î¶(s) has no zeros on the line Re(s) = 1. The famous **Riemann Hypothesis** conjectures that all non-trivial zeros lie on the line Re(s) = 1/2, which would imply much stronger error bounds for Ï€(x).
+The proof relies on showing that ζ(s) has no zeros on the line Re(s) = 1. The famous **Riemann Hypothesis** conjectures that all non-trivial zeros lie on the line Re(s) = 1/2, which would imply much stronger error bounds for π(x).
 
 ### Implications and Applications
 
@@ -66,9 +66,9 @@ The proof relies on showing that Î¶(s) has no zeros on the line Re(s) = 1. The
 #### Twin Prime Conjecture
 The density of twin primes (primes p such that p+2 is also prime) is conjectured to be asymptotically:
 ```
-Ï€â‚‚(x) ~ 2Câ‚‚ Ã— x/(ln(x))Â²
+π₂(x) ~ 2C₂ × x/(ln(x))²
 ```
-where Câ‚‚ â‰ˆ 0.66016 is the twin prime constant.
+where C₂ ≈ 0.66016 is the twin prime constant.
 
 #### Goldbach Conjecture
 Every even integer greater than 2 can be expressed as the sum of two primes. While unproven, the Prime Number Theorem provides probabilistic evidence for its truth.
@@ -79,7 +79,7 @@ This data analysis project computationally verifies the Prime Number Theorem usi
 
 ### Datasets Generated
 
-1. **`prime_counting_function.csv`**: Main dataset comparing Ï€(x) with approximations
+1. **`prime_counting_function.csv`**: Main dataset comparing π(x) with approximations
 2. **`prime_gaps_analysis.csv`**: Analysis of gaps between consecutive primes  
 3. **`prime_distribution_dense.csv`**: Dense sampling for smooth visualizations
 4. **`primes_properties.csv`**: Properties of individual primes including twin prime identification
@@ -89,14 +89,14 @@ This data analysis project computationally verifies the Prime Number Theorem usi
 - **Sieve of Eratosthenes**: Efficient prime generation up to 100,000
 - **Multiple Approximations**: Comparison of x/ln(x) and li(x) accuracy
 - **Gap Analysis**: Verification that prime gaps grow logarithmically
-- **Convergence Demonstration**: Visual proof that Ï€(x)/(x/ln(x)) â†’ 1
+- **Convergence Demonstration**: Visual proof that π(x)/(x/ln(x)) → 1
 - **Twin Primes**: Analysis of twin prime distribution
 
 ### Computational Verification
 
 The project demonstrates several key aspects of the Prime Number Theorem:
 
-1. **Asymptotic Convergence**: Shows Ï€(x)/(x/ln(x)) approaching 1
+1. **Asymptotic Convergence**: Shows π(x)/(x/ln(x)) approaching 1
 2. **Approximation Quality**: li(x) is 60+ times more accurate than x/ln(x) for large x
 3. **Gap Distribution**: Prime gaps correlate with ln(prime) as predicted
 4. **Error Decay**: Relative errors decrease as x increases
@@ -123,8 +123,8 @@ This will load all datasets and perform comprehensive statistical analysis, disp
 
 The project includes four compelling visualizations:
 
-1. **Prime Distribution Chart**: Ï€(x) vs approximations on log-log scale
-2. **Convergence Chart**: Demonstration of Ï€(x)/(x/ln(x)) â†’ 1  
+1. **Prime Distribution Chart**: π(x) vs approximations on log-log scale
+2. **Convergence Chart**: Demonstration of π(x)/(x/ln(x)) → 1  
 3. **Prime Gaps Scatter**: Gap distribution vs log(prime)
 4. **Error Comparison**: Relative accuracy of different approximations
 
