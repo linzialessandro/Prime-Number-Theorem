@@ -104,13 +104,17 @@ The project demonstrates several key aspects of the Prime Number Theorem:
 ## Running the Analysis
 
 ### Prerequisites
+Python 3.11+ (tested on 3.14):
 ```bash
-pip install numpy pandas matplotlib seaborn scipy
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -U pip
+python3 -m pip install -r requirements.txt
 ```
 
 ### Execution
 ```bash
-python prime_number_analysis.py
+python3 prime_number_analysis.py
 ```
 
 This will load all datasets and perform comprehensive statistical analysis, displaying:
