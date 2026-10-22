@@ -47,14 +47,14 @@ def main():
     final_row = df_counting[df_counting['x'] == max_x].iloc[0]
 
     print(f"\nAt x = {max_x:,}:")
-    print(f"  Actual Ï€(x) = {final_row['pi_x']:,.0f}")
+    print(f"  Actual π(x) = {final_row['pi_x']:,.0f}")
     print(f"  PNT estimate x/ln(x) = {final_row['pnt_approximation']:,.1f}")
     print(f"  Better estimate li(x) = {final_row['li_approximation']:,.1f}")
     print(f"  PNT relative error: {final_row['pnt_relative_error']:.4f}")
     print(f"  li(x) relative error: {final_row['li_relative_error']:.4f}")
 
     ratio = final_row['pi_x'] / final_row['pnt_approximation']
-    print(f"\nConvergence to PNT: Ï€(x)/(x/ln(x)) = {ratio:.6f}")
+    print(f"\nConvergence to PNT: π(x)/(x/ln(x)) = {ratio:.6f}")
     print(f"Theoretical limit: 1.000000")
     print(f"Deviation: {abs(1 - ratio):.6f}")
 
@@ -81,7 +81,7 @@ def main():
     print("=" * 55)
 
     print("\nAccuracy improvement with increasing x:")
-    print("x\t\tÏ€(x)\tx/ln(x) error\tli(x) error\tImprovement")
+    print("x\t\tπ(x)\tx/ln(x) error\tli(x) error\tImprovement")
     print("-" * 65)
 
     for _, row in df_counting.iterrows():
@@ -105,7 +105,7 @@ def main():
     print(f"  Percentage: {twin_count/total_analyzed*100:.1f}%")
     print(f"  Largest twin prime in dataset: {twin_primes['prime'].max()}")
 
-    # Hardy-Littlewood conjecture estimates about x/lnÂ²(x) twin primes up to x
+    # Hardy-Littlewood conjecture estimates about x/ln²(x) twin primes up to x
     x_max = df_properties['prime'].max()
     hl_estimate = 2 * 1.32032 * x_max / (log(x_max)**2)
     actual_twins = twin_count * 2  # Each twin prime contributes to 2 numbers
@@ -116,7 +116,7 @@ def main():
     print("CONCLUSION")
     print("=" * 55)
     print("\nThe computational analysis confirms the Prime Number Theorem:")
-    print("1. Ï€(x) ~ x/ln(x) as x â†’ âˆž")
+    print("1. π(x) ~ x/ln(x) as x → ∞")
     print("2. li(x) provides superior approximation accuracy")
     print("3. Prime gaps show expected logarithmic growth")
     print("4. Twin primes follow predicted density patterns")
